@@ -2,8 +2,8 @@
 	"openapi": "3.0.3",
 	"info": {
 	  "title": "Ann's Practice API - OpenAPI 3.0",
-	  "description": "This is a Postman collection covering the DeepL API. For a more in depth look at how things work, check out the [official documentation](https://www.deepl.com/docs-api).\n\n### Getting started\n\nTo get started, [sign up for a developer account at deepl.com](https://www.deepl.com/pro-checkout/account?productId=1200&yearly=false&trial=false) and get your authentication key from [your account page](https://www.deepl.com/account/summary).\n\nFrom there, fork this `DeepL API` collection, and select the relevant `baseUrl` variable depending on you subscription (`https://api.deepl.com/v2` for **Pro**, `https://api-free.deepl.com/v2` for **Free**).\n\nIn the Authorization section of your forked collection, you will see the value `DeepL-Auth-Key [yourAuthKey]`. Change `[yourAuthKey]` for your own key and you're ready to go!\n\nWant to get even more involved? [Join the DeepL community on our Discord!](https://discord.gg/deepl)",
-	  "termsOfService": "http://swagger.io/terms/",
+	  "description": "This is a test Postman collection covering simple operations of a StudSocAPI. For a more in depth look at how things work, check out the official documentation.\nGetting started\nTo get started, sign up for a developer account at studsoc.com  and get your authentication key from your account page.\nFrom there, fork this Stud Soc  collection, and select the relevant base-url variable depending on your faculty.         \nIn the Authorization section of your forked collection, you will see the value Stud Soc [yourAuthKey]. Change [`AuthKey`] for your own key and you're ready to go!\nWant to get even more involved? Join the StudSoc community on our Discord!",
+	  "termsOfService": "https://github.com/AnnArinze?tab=repositories",
 	  "contact": {
 		"email": "apiteam@swagger.io"
 	  },
@@ -47,10 +47,10 @@
 			"user"
 		  ],
 		  "summary": "Create user",
-		  "description": "This can only be done by the logged in user.",
+		  "description": "This can only be done by a new user.",
 		  "operationId": "createUser",
 		  "requestBody": {
-			"description": "Created user object",
+			"description": "Create user object",
 			"content": {
 			  "application/json": {
 				"schema": {
@@ -97,7 +97,7 @@
 		  "description": "",
 		  "operationId": "loginUser",
 		  "requestBody": {
-			"description": "Update an existent user in the store",
+			"description": "The user credentials required for log in",
 			"content": {
 			  "application/json": {
 				"schema": {
@@ -149,7 +149,7 @@
 		  "tags": [
 			"user"
 		  ],
-		  "summary": "Logs out current logged in user session",
+		  "summary": "Logs out user",
 		  "description": "",
 		  "operationId": "logoutUser",
 		  "parameters": [],
@@ -185,12 +185,14 @@
 			  "content": {
 				"application/json": {
 				  "schema": {
-					"$ref": "#/components/schemas/User"
+					"type": "string",
+					"example": "successful"
 				  }
 				},
 				"application/xml": {
 				  "schema": {
-					"$ref": "#/components/schemas/User"
+					"type": "string",
+					"example": "successful"
 				  }
 				}
 			  }
@@ -214,7 +216,7 @@
 			{
 			  "name": "id",
 			  "in": "path",
-			  "description": "name that need to be deleted",
+			  "description": "id of the user that needs to be updated",
 			  "required": true,
 			  "schema": {
 				"type": "string"
@@ -222,7 +224,7 @@
 			}
 		  ],
 		  "requestBody": {
-			"description": "Update an existent user in the store",
+			"description": "Update an existing user",
 			"content": {
 			  "application/json": {
 				"schema": {
@@ -242,8 +244,28 @@
 			}
 		  },
 		  "responses": {
-			"default": {
-			  "description": "successful operation"
+			"200": {
+			  "description": "successful operation",
+			  "content": {
+				"application/json": {
+				  "schema": {
+					"type": "string",
+					"example": "successful"
+				  }
+				},
+				"application/xml": {
+				  "schema": {
+					"type": "string",
+					"example": "successful"
+				  }
+				}
+			  }
+			},
+			"400": {
+			  "description": "Invalid username supplied"
+			},
+			"404": {
+			  "description": "User not found"
 			}
 		  }
 		}
@@ -253,14 +275,14 @@
 		  "tags": [
 			"auth"
 		  ],
-		  "summary": "Update user",
+		  "summary": "Add user recovery email",
 		  "description": "This can only be done by the logged in user.",
 		  "operationId": "add-recovery-email",
 		  "parameters": [
 			{
 			  "name": "id",
 			  "in": "path",
-			  "description": "name that need to be deleted",
+			  "description": "the id of the user who needs a recovery email",
 			  "required": true,
 			  "schema": {
 				"type": "string"
@@ -268,7 +290,7 @@
 			}
 		  ],
 		  "requestBody": {
-			"description": "Update an existent user in the store",
+			"description": "The new recovery email of the logged in user",
 			"content": {
 			  "application/json": {
 				"schema": {
@@ -299,11 +321,11 @@
 		  "tags": [
 			"auth"
 		  ],
-		  "summary": "Update user",
-		  "description": "This can only be done by the logged in user.",
+		  "summary": "User forgot their password",
+		  "description": "The user must have an existing account.",
 		  "operationId": "forgot-password",
 		  "requestBody": {
-			"description": "Update an existent user in the store",
+			"description": "The email of the user",
 			"content": {
 			  "application/json": {
 				"schema": {
@@ -334,10 +356,11 @@
 		  "tags": [
 			"auth"
 		  ],
-		  "summary": "Update user",
+		  "summary": "The user wants to change password",
 		  "description": "This can only be done by the logged in user.",
 		  "operationId": "change-password",
 		  "requestBody": {
+			"description": "The new password of the user",
 			"content": {
 			  "application/json": {
 				"schema": {
@@ -386,10 +409,11 @@
 		  "tags": [
 			"auth"
 		  ],
-		  "summary": "Update user",
-		  "description": "This can only be done by the logged in user.",
+		  "summary": "Verify your account",
+		  "description": "New user must verify their account",
 		  "operationId": "verify-signup",
 		  "requestBody": {
+			"description": "The token that has been sent to the user's email",
 			"content": {
 			  "application/json": {
 				"schema": {
