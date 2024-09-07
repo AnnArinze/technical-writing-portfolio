@@ -9,8 +9,6 @@ info:
     In the Authorization section of your forked collection, you will see the value Stud Soc [yourAuthKey]. Change [`AuthKey`] for your own key and you're ready to go!
     Want to get even more involved? Join the StudSoc community on our Discord!
 
-
-
   termsOfService: https://github.com/AnnArinze?tab=repositories
   contact:
     email: apiteam@swagger.io
