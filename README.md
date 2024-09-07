@@ -31,3 +31,8 @@ tags:
 ### yaml
 ```json
 ```
+
+## Architechtural decision records (ADR)
+
+An Architecture Decision Record (ADR) is a document that captures important architectural decisions made in a project, along with their context and consequences. ADRs are commonly written in Markdown to make them easy to read and version control. Below is an example of an ADR for a hypothetical technical project change.
+An example can be found [here](./adr.md).
