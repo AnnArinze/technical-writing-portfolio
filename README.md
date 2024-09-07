@@ -31,7 +31,7 @@ An example documentation in yaml can be found [here](./api-documentation.yaml)
 ### json
 ```json
 ```
-n example documentation in json can be found [here](./api-documentation.json)
+An example documentation in json can be found [here](./api-documentation.json)
 
 ## Architechtural decision records (ADR)
 
