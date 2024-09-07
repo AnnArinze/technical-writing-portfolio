@@ -12,7 +12,7 @@ Within this portfolio, we see examples of the following touch points
 
 ## Api documentation (yaml/json)
 
-### json
+### yaml
 The tags defined within the api document, to which all the apis belong
 ```yaml
 tags:
@@ -27,10 +27,11 @@ tags:
       description: Find out more
       url: http://swagger.io
 ```
-
-### yaml
+An example documentation in yaml can be found [here](./api-documentation.yaml)
+### json
 ```json
 ```
+n example documentation in json can be found [here](./api-documentation.json)
 
 ## Architechtural decision records (ADR)
 
