@@ -15,7 +15,6 @@ This README provides an overview of each document included in the portfolio, exp
     6. Request for Comments (RFCs)
     7. Architecture Decision Record (ADR)
 - How to Navigate the Portfolio
-- Contributing to the Portfolio
 - Contact Information
 
 ## Overview
