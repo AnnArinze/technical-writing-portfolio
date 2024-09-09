@@ -10,7 +10,7 @@ This README provides an overview of each document included in the portfolio, exp
     1. API Documentation
     2. Installation Guide
     3. White Paper
-    4. User Manual
+    4. User Guide
     5. Request for Proposal (RFP)
     6. Request for Comments (RFCs)
     7. Architecture Decision Record (ADR)
